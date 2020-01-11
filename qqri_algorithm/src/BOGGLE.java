@@ -37,23 +37,23 @@ public class BOGGLE{
         int[][] board;
         String word;
 
-        int tc = sc.nextInt(); // 테스트 케이스 > 근데 테스트 케이스 개수..
-        for(int j=0;j<tc;j++) {
+        int tc = sc.nextInt(); // 테스트 케이스
+
+        while(tc>0) {
             board = new int[5][5];
             for (int x = 0; x < 5; x++) {
                 for (int y = 0; y < 5; y++)
                     board[x][y] = sc.nextInt();
             }
+            int num = sc.nextInt();
+            for (int i = 0; i < num; i++) {
+                // wordList[i] = sc.nextLine();
+                word = sc.nextLine();
+                boolean res = hasWord(0, 0, word);
+                System.out.println(res ? "YES" : "NO");
+            }
+            tc --;
         }
-
-        int num = sc.nextInt();
-        for(int i=0;i<num;i++){
-           // wordList[i] = sc.nextLine();
-            word = sc.nextLine();
-            boolean res = hasWord(0,0,word);
-            System.out.println(res? "YES":"NO");
-        }
-
 
 
     }
