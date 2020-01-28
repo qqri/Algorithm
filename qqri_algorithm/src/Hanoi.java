@@ -1,27 +1,39 @@
 import java.util.Scanner;
+import java.lang.*;
+
+/*
+* 시작, 도움, 끝 기둥
+* 시작기둥 -> 도움 기둥으로
+* 도움기둥 -> 끝 기둥 으로 옮긴다.
+*
+*/
 
 public class Hanoi {
-    public static int answer = 0;
-    public static StringBuilder sb = new StringBuilder();
 
+    public static int cnt = 0;
 
-    public static void moveHanoiTower(int num, int from, int by, int to) {
-        ++answer;
-        if(num == 1) {
-            sb.append(from + " " + to + "\n");
-        } else {
-            // STEP 1 : num-1개를 A에서 B로 이동
-            moveHanoiTower(num-1, from, to, by);
-            // STEP 2 : 1개를 A에서 C로 이동
-            sb.append(from + " " + to + "\n");
-            moveHanoiTower(num-1, by, from, to);
+    public  static int hanoi(int n,int start,int goal,int ass){
+        cnt++;
+        if(n==1){
+            System.out.println(start+"->"+goal);
+            return 0;
         }
+        hanoi(n-1,start,ass,goal);
+        System.out.println(start+"->"+goal);
+        hanoi(n-1,ass,goal,start);
+        return 0;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        moveHanoiTower(num, 1, 2, 3);
-        sb.insert(0, answer + "\n");
-        System.out.println(sb);
+        int n,start,goal,ass;
+
+        n = sc.nextInt();
+        start = sc.nextInt();
+        goal = sc.nextInt();
+        ass = sc.nextInt();
+
+        hanoi(n,start,goal,ass);
+        System.out.println("총 이동 횟수 : "+cnt);
     }
 }
