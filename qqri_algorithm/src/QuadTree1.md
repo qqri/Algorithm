@@ -7,7 +7,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-/*
+class Main{
     static int tc, index;
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -37,4 +37,5 @@ import java.io.InputStreamReader;
         return "x" + three + four + one + two;
 
     }
+}
 ```
