@@ -4,10 +4,12 @@
 
 # 코드
 ```java
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.*;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -32,27 +34,24 @@ public class Main {
             }
         }
 
-        /*
-        * 삼각형의 맨 끝인경우 그냥 더함?_?
-        * (0,0)
-        * (1,0) (1,1)
-        * (2,0) (2,1) (2,2)
-        *
-        */
-        for(int i=0;i<n;i++){
+
+        for(int i=1;i<n;i++){
             for(int j=0;j<=i;j++){
                 if(j==0){
-                    maxRoad += map[0][0];
+                    map[i][j] += map[i-1][j];
                 }
-                if(i == j){
-                    maxRoad = maxRoad +map[i][j];
+                else if(i == j){
+                    map[i][j] += map[i-1][j-1];
                 }
-                else maxRoad = Math.max( maxRoad +map[i][j] , maxRoad + map[i][j+1] );
+                else map[i][j] += Math.max( map[i-1][j-1] , map[i-1][j] );
+
+
+                // 한방에 : map[i][j] += Math.max( (j==0) ? 0 : map[i-1][j-1], map[i-1][j]);
 
             }
         }
-
-        System.out.println(maxRoad);
+        Arrays.sort(map[n-1]); // n-1 행 즉, 크기 5짜리 삼각형이였으면 마직막 행을 정력한다. -- 내림차순으로 정렬됨
+        System.out.println(map[n-1][n-1]); //내림차순이니까 마지막꺼 정렬하면 되겠징!? 
 
     }
 
