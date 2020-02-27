@@ -13,6 +13,7 @@ import java.math.BigInteger;
 
 
 public class Main {
+
     static int n;
     static long[] result;
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
