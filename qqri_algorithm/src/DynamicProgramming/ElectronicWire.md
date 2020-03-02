@@ -2,6 +2,14 @@
 [전깃즐 문제](https://www.acmicpc.net/problem/2565)
 <br>출처 : 백준
 
+map2 의 2차원 배열 정렬을 따로 할 필요 없이
+처음에 값 받을때
+```java
+map2[sc.nextInt] = map2[sc.nextInt]
+```
+로 했으면 2차원 배열 하는 시간을 더 줄일수 있었을것 같다.
+(물론 그러려면 map2는 int[501] 로 만들고)
+
 # 코드
 ```java
 import java.io.BufferedInputStream;
