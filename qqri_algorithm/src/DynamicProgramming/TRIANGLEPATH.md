@@ -1,5 +1,5 @@
 # 문제
-[01타일 문제](https://algospot.com/judge/problem/read/TRIANGLEPATH)
+[TRIANGLEPATH 문제](https://algospot.com/judge/problem/read/TRIANGLEPATH)
 <br>출처 : 알고스팟
 
 C로 풀때 메모이제이션 저장 방법을 참조로 했는데
