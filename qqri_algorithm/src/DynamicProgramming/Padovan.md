@@ -1,6 +1,6 @@
 # 문제
 [파도반 문제](https://www.acmicpc.net/problem/9461)
-<br>출처 : 백준
+<br>출처 : 백준<br>
 int 형이 아니라 long 형으로 해야 한다<br>
 안그러면 오버플로우 남.
 

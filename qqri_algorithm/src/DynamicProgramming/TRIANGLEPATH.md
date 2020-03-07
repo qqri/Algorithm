@@ -55,8 +55,8 @@ public class Main {
 
         //메모이제이션
         ret = Math.max(path(y+1, x) , path(y+1, x+1)) + map[y][x];
-        dp[y][x] =ret;
-        return ret;
+
+        return dp[y][x] =ret;
     }
 
 }
