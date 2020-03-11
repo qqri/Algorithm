@@ -1,6 +1,7 @@
 # 문제
 [PI 문제](https://www.algospot.com/judge/problem/read/PI)
 <br>출처 : 알고스팟
+<br><br>알고스팟에 있는대로 했는데 시간초과 나오긴함.. ㅠㅠ
 
 # 코드
 ```java
@@ -41,7 +42,7 @@ public class Main {
         for(int i = 0 ; i < M.length() ; i++ ) {
             single = single + M.charAt(0);
         }
-        if(single == M) return 1;
+        if(single.equals(M) ) return 1;
 
         //2.  1,-1 단조 증가/ 감소 확인 & 등차수열인지
         Boolean progressive = true;
@@ -51,7 +52,7 @@ public class Main {
             }
         }
 
-        if( progressive && ( Math.abs( M.charAt(1)-'0') - (M.charAt(0) - '0')==1 )) return 2;
+        if( progressive && ( Math.abs( ( M.charAt(1)-'0') - (M.charAt(0) - '0')) == 1 )) return 2;
 
         //3. 두개의 수가 번갈아 나타나는지 확인
         Boolean alternating = true;
