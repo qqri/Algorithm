@@ -27,7 +27,7 @@ public class Main {
         }
         dp[0] = map[0] ; //1번째 계단
         dp[1] = Math.max(map[0] + map[1] , map[1]) ; //2번째 계단
-        dp[2] = Math.max(map[0]+map[2] , map[1]+map[2]) ; //3번째 계단
+        dp[2] = Math.max(map[0]+map[2] , map[1]+map[2])) ; //3번째 계단
 
         for(int i =3 ; i < n ; ++i ) {
             dp[i] = Math.max( ( dp[i-2] + map[i] ) , ( dp[i-3] + map[i-1] + map[i] ) );
