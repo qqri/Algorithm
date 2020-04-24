@@ -39,7 +39,7 @@ class Solution {
 class Solution {
     public int[] solution(int brown, int red) {
         for(int i=1; i<=red; i++) {
-            if(red%i==0 && (red/i+i)*2+4==brown) {
+            if( red % i == 0 && ( red / i + i) * 2 + 4 == brown) {
                 return new int[] {red/i+2, i+2};
             }
         }
