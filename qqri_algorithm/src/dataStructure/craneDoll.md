@@ -1,5 +1,5 @@
 # 문제
-[프린트 문제](https://programmers.co.kr/learn/courses/30/lessons/64061)
+[크레인인형뽑기 문제](https://programmers.co.kr/learn/courses/30/lessons/64061)
 <br>출처 : 프로그래머스
 
 # 코드 풀이1 - arraylist 사용
