@@ -32,7 +32,7 @@ public class Meeting {
         //객체속에 객체에 대한 배열도 만들수 있다.
         Interval[] intervals = {in1 , in2, in3};
 
-
+        System.out.println(in1.getClass().getName());
         //m.solve(intervals);
         System.out.println(m.solve(intervals));
 
