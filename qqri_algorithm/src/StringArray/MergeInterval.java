@@ -32,17 +32,7 @@ public class MergeInterval {
 
         List<Interval2> answer = mi.merge(intervals);
         mi.print(answer);
-        /*
-        Interval2[] intervals = { in1 , in2 , in3 , in4 };
 
-        //System.out.println(intervals.length);
-        ArrayList<Interval2[]> answer = new ArrayList<>();
-        answer = mi.solve1(intervals);
-
-        for(int i = 0 ; i < answer.size() ; i++) {
-            System.out.println(answer.get(i)[0].start + " , " + answer.get(i)[0].end );
-        }
-        */
 
     }
     public void print(List<Interval2> intervals){
