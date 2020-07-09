@@ -10,18 +10,15 @@ import java.util.Set;
 public class SpiralMatrix {
     public static void main(String[] args) throws NumberFormatException, IOException {
         /*
-        * 담을 그릇 : ArrayList로 받을 예정..
-        * while로 갈때마다 하면 되나?
-        * n * m 행렬
+        * while로 돌린다.
+        * break문을 걸 경우로 무한 루프 빠뜨리는 게 아니라, while 조건 자체를
+        * 루프조건으로 잡는다.
         *
-        * nums[1][0] 하면 4 가 나온다.
-        *
-        * 4개의 인덱스를 생각해서 해야한다.
         * */
         int[][] matrix = {{1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13, 14, 15 ,16 }};
         int[][] nums = {{1,2,3}, {4,5,6}, {7,8,9}};
 
-        for(int n : solve1(matrix) ) {
+        for(int n : solve(matrix) ) {
             System.out.print(n + " ");
         }
 
@@ -93,16 +90,16 @@ public class SpiralMatrix {
                 for (int a = rowEnd; a >= rowStart; a--) {
                     result.add(nums[colEnd][a]);
                 }
-            }
-            colEnd--;
 
+                colEnd--;
+            }
             if (rowStart <= rowEnd) {
                 for (int b = colEnd; b >= colStart; b--) {
                     result.add(nums[b][rowStart]);
                 }
-            }
-            rowStart++;
 
+                rowStart++;
+            }
         }
 
         return result;
