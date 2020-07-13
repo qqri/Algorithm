@@ -35,9 +35,7 @@ public class GroupAnagrams {
         for(String str : strList) {
             char[] charArr = str.toCharArray();
             Arrays.sort(charArr);
-            String key = String.valueOf(charArr);
-
-            if(map.containsKey(key)) {
+            String key = String.valueOf(charArr);            if(map.containsKey(key)) {
                 map.get(key).add(str); //이렇게만해도 list에 더해져서 반영된다.
 //                List<String> list = map.get(key);
 //                list.add(str);
