@@ -53,6 +53,8 @@ public class BinaryTree {
             Node node = stack.pop();
             int cnt = val.pop();
 
+            System.out.println("node value : " + node.val);
+
             max = Math.max(cnt, max);
 
             if( node.left != null ) {
