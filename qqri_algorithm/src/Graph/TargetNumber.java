@@ -9,8 +9,8 @@ import java.lang.Math;
 
 public class TargetNumber {
     public static void main(String[] args) throws NumberFormatException, IOException {
-        int[] numbers = {1,2,3};
-        int target = 6;
+        int[] numbers = {1,1,1,1,1};
+        int target = 3;
 
         System.out.println( solution( numbers, target ) );
     }
@@ -19,15 +19,14 @@ public class TargetNumber {
         //1
         ArrayList<Integer> result = new ArrayList<>();
         //2
-        dfs(numbers, numbers.length-1 , target + numbers[0] , result);
-        dfs(numbers, numbers.length-1 , target - numbers[0] , result);
+        dfs(numbers, numbers.length , target, result);
         return result.size();
     }
 
     public static void dfs(int[] numbers, int cnt , int sum, ArrayList<Integer> result) {
 
-        if(cnt == 1) { // target  다 빼기 되면 0 될거니까 그때 리턴
-            if( (sum + numbers[0] == 0) || (sum - numbers[0] == 0 ) ) {
+        if(cnt == 0) { // target  다 빼기 되면 0 될거니까 그때 리턴
+            if( sum == 0) {
                 result.add(0);
             }
             return;
