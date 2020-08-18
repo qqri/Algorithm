@@ -13,11 +13,14 @@ public class Maze {
                      { 0,0, 0, 0, 0},
                      { 0, 0 ,0 ,1 ,0},
                      { 1, 1, 0, 1, 1},
-                     { 0, 0, 0, 0, 0}
-                                     };
+                     { 0, 0, 0, 0, 0}};
         int[] start = {0,4};
         int[] end = {4,4};
 
+        boolean[][] visited = new boolean[grid.length][grid[0].length];
+
+        System.out.println(dfs(grid, visited, start, end));
+        System.out.println("====");
         System.out.println(bfs(grid, start, end));
 
 
@@ -62,36 +65,32 @@ public class Maze {
         return false;
     }
 
-    public static boolean dfs(int[][] grid, int[] start, int[] end , int[] before) {
-
+    public static boolean dfs(int[][] grid, boolean[][] visited,int[] start, int[] end) {
         //1
+        int m = grid.length;
+        int n = grid[0].length;
+
+        int x = start[0];
+        int y = start[1];
+
+        if( x < 0 || x >= m || y < 0 || y >= n || visited[x][y] ) return false;
+        visited[x][y] = true;
         if(start[1] == end[1] && start[0] == end[0]) return true;
 
-       // if(start[0] < 0 || start[0] >= grid.length || start[1] < 0 || start[1] >= grid[0].length ) return false;
-       // if(grid[start[0]][start[1]] == 2) return false;
-
-        //2
-        if(grid[start[0]][start[1]] == 0) {
-         //   grid[start[0]][start[1]] = 2; // 한번 지난 곳 표시하기
-            start[0] += before[0];
-            start[1] += before[1];
-            return dfs(grid, start , end , before);
-        }
-        else if(grid[start[0]][start[1]] == 1 || start[0] < 0 || start[0] >= grid.length || start[1] < 0 || start[1] >= grid[0].length) {// 1 일때
-            if( grid[start[0]][start[1]] == 1 ) {
-                grid[start[0]][start[1]] = 2;
+        for(int[] dir : dirs) {
+            while( x >=0 && x < m && y >= 0 && y < n ) {
+                x += dir[0];
+                y += dir[1];
             }
-            start[0] -= before[0];
-            start[1] -= before[1];
-            grid[start[0]][start[1]] = 0;
-            for(int[] dir : dirs ) {
-                    start[0] += dir[0];
-                    start[1] += dir[1];
+            x -= dir[0];
+            y -= dir[1];
 
-                    dfs(grid , start, end, dir);
-
+            if(dfs(grid, visited , new int[] {x,y} , end)) {
+                return true;
             }
         }
+
+
 
         return false;
     }
