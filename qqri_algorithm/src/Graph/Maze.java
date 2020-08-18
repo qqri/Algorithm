@@ -85,6 +85,7 @@ public class Maze {
             x -= dir[0];
             y -= dir[1];
 
+//            dfs(grid, visited, new int[] {x,y} , end) ;
             if(dfs(grid, visited , new int[] {x,y} , end)) {
                 return true;
             }
