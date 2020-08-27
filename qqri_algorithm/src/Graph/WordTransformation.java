@@ -2,12 +2,12 @@ package Graph;
 
 import java.util.*;
 
-public class WordLadder {
+public class WordTransformation {
     public static void main(String[] args) {
         String[] words = {"hot","dot","lot","log","cog"};
         List<String> wordList = Arrays.asList(words);
 
-        WordLadder w = new WordLadder();
+        WordTransformation w = new WordTransformation();
 
         System.out.println(w.solution("hit" , "cog", wordList));
 
@@ -31,7 +31,7 @@ public class WordLadder {
             int size = que.size();
             for(int i = 0 ; i < size ; i++) {
                 String str = que.poll();
-                if( str.equals(endWord) ) return level;
+                if( str.equals(endWord) ) return level-1;
 
                 for(String neighbor : neighbors( str , dict ) ) {
                     System.out.println("neighbor : " + neighbor);
