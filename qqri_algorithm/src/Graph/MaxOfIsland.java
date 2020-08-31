@@ -10,6 +10,7 @@ public class MaxOfIsland {
                 {'0', '0', '0', '0', '1'}};
 
         System.out.println(solve(grid));
+
     }
 
     public static int solve(char[][] grid) {
