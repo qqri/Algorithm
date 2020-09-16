@@ -12,7 +12,7 @@ public class Maze {
                      { 0, 0, 1, 0, 0},
                      { 0,0, 0, 0, 0},
                      { 0, 0 ,0 ,1 ,0},
-                     { 1, 1, 0, 1, 1},
+                     { 1, 1, 1, 1, 1},
                      { 0, 0, 0, 0, 0}};
         int[] start = {0,4};
         int[] end = {4,4};
@@ -44,7 +44,7 @@ public class Maze {
             for(int[] dir : dirs) {
                 int x = p[0];
                 int y = p[1];
-                while( x >= 0 && x < m && y >= 0 && y < n && grid[x][y] == 0 ) {
+                while( x >= 0 && x < m && y >= 0 && y < n && grid[x][y] == 0) {
                         x += dir[0];
                         y += dir[1];
                 }
@@ -64,7 +64,15 @@ public class Maze {
 
         return false;
     }
+    public static boolean bfs(int[][] grid , int[] start , int[] end , boolean[][] visited) {
+        int m = grid.length, n = grid[0].length;
 
+
+
+        return false;
+    }
+
+    // 이거 boolean 이 없어서 틀린거
     public static boolean dfs(int[][] grid, boolean[][] visited,int[] start, int[] end) {
         //1
         int m = grid.length;
@@ -78,15 +86,17 @@ public class Maze {
         if(start[1] == end[1] && start[0] == end[0]) return true;
 
         for(int[] dir : dirs) {
-            while( x >=0 && x < m && y >= 0 && y < n ) {
-                x += dir[0];
-                y += dir[1];
+            int dx = start[0];
+            int dy = start[1];
+            while( dx >=0 && dx < m && dy >= 0 && dy < n && grid[dx][dy] != 0 ) {
+                dx += dir[0];
+                dy += dir[1];
             }
-            x -= dir[0];
-            y -= dir[1];
+            dx -= dir[0];
+            dy -= dir[1];
 
 //            dfs(grid, visited, new int[] {x,y} , end) ;
-            if(dfs(grid, visited , new int[] {x,y} , end)) {
+            if(dfs(grid, visited , new int[] {dx,dy} , end)) {
                 return true;
             }
         }
