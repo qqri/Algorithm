@@ -43,7 +43,7 @@ class RaceBuild {
                 int curX = tempRoad.x + dirs[i][0];
                 int curY = tempRoad.y + dirs[i][1];
                 // 벗어나지 않아야 한다.
-                while(curX>= 0 && curY>= 0 &&curX< map.length &&curY< map.length && map[curX][curY] != 1) {
+                if(curX>= 0 && curY>= 0 &&curX< map.length &&curY< map.length && map[curX][curY] != 1) {
                     int curCost = 0;
                     if(tempRoad.dir == i || tempRoad.dir == -1) curCost = tempRoad.cost + 100;
                     else curCost = tempRoad.cost + 600;
