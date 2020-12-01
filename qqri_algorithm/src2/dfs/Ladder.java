@@ -1,5 +1,5 @@
 import java.util.*;
-public class Sol2{
+public class Sol11{
     static int N,M,H;
     static int[][] Ladder = new int[30][10]; //주의
     static final int Right = 1;
