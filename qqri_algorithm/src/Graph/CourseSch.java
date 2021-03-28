@@ -1,6 +1,8 @@
 package Graph;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class CourseSch {
@@ -45,7 +47,7 @@ public class CourseSch {
                 }
             }
         }
-
+        
         for(int i = 0 ; i < inDegreeLength ; i++ ) {
             if(inDegree[i] != 0) {
                 return false;
