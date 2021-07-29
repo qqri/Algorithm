@@ -56,6 +56,8 @@ public class Main{
     }
 
     //부모찾기 - parent[a] 가 목표다.
+
+
     static int find( int a ) {
         if(a == parent[a]) return a;
         parent[a] = find( parent[a] );
@@ -73,4 +75,6 @@ public class Main{
             return;
         }
     }
+
+
 }
